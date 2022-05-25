@@ -12,7 +12,8 @@ export default function Menu({
 
   const { shipments, searchParam } = useContext(ShipmentsProvider);
 
-  const filteredShipments = shipments.filter(shipment => shipment.name.toLowerCase().includes(searchParam.toLowerCase()));
+  const filteredShipments = shipments.filter(shipment => 
+    shipment.name.toLowerCase().includes(searchParam.toLowerCase()));
 
   const handleNavLink = () => setIsMenuOpen(false);
 
