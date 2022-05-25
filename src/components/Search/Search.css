@@ -15,6 +15,7 @@
 
 @media (max-width: 620px) {
     .search {
+        margin-top: 0;
         max-width: unset;
     }
 }
