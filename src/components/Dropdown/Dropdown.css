@@ -1,0 +1,28 @@
+.dropdown {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: calc(100% - 25px);
+    max-height: 300px;
+    width: 100%;
+    overflow-y: auto;
+    border-radius: 10px;
+    background-color: #ffffff;
+}
+
+.dropdown__item {
+    padding: 5px;
+    cursor: pointer;
+    color: #000000;
+    text-decoration: none;
+}
+
+.dropdown__item:hover {
+    background-color: aliceblue;
+}
+
+@media (min-width: 620px) {
+    .dropdown {
+        display: none;
+    }
+}

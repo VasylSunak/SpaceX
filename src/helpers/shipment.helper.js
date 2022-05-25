@@ -1,3 +1,6 @@
+export const filterShipments = (shipments, searchParam) => 
+    shipments.filter(shipment => shipment.name.toLowerCase().includes(searchParam.toLowerCase()));
+
 export const getNumberOfCargoBays = (value) => {
 
     if (!value) return 0;

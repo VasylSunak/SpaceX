@@ -22,7 +22,6 @@ function App() {
 
   const ProviderValue = {
     shipments, 
-    setShipments, 
     searchParam, 
     setSearchParam
   }
