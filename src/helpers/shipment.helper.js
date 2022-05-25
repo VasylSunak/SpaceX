@@ -14,7 +14,7 @@ export const getCargoBaysInfo = (value) => {
 
     const isCargoBoxesNotValid = 
         !validateCargoBoxes(cargoBoxes) || 
-        (cargoBoxes.length === 0 || cargoBoxes[0] === 0);
+        (cargoBoxes.length === 0 && cargoBoxes[0] === 0);
 
     if (isCargoBoxesNotValid) {
         cargoBaysInfo.error = 'Invalid number of cargo boxes';
