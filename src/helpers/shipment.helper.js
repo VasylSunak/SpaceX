@@ -1,9 +1,14 @@
 export const filterShipments = (shipments, searchParam) => 
     shipments.filter(shipment => shipment.name.toLowerCase().includes(searchParam.toLowerCase()));
 
-export const getNumberOfCargoBays = (value) => {
+export const getCargoBaysInfo = (value) => {
 
-    if (!value) return 0;
+    const cargoBaysInfo = {
+        value: 0,
+        error: null
+    }
+
+    if (!value) return cargoBaysInfo;
 
     let cargoBoxes = value.split(',').map(cargoBox => +cargoBox);
 
@@ -11,9 +16,14 @@ export const getNumberOfCargoBays = (value) => {
         !validateCargoBoxes(cargoBoxes) || 
         (cargoBoxes.length === 0 || cargoBoxes[0] === 0);
 
-    if (isCargoBoxesNotValid) return 0;
+    if (isCargoBoxesNotValid) {
+        cargoBaysInfo.error = 'Invalid number of cargo boxes';
+        return cargoBaysInfo;
+    };
 
-    return calculateNumberOfCargoBays(cargoBoxes);
+    cargoBaysInfo.value = calculateNumberOfCargoBays(cargoBoxes);
+
+    return cargoBaysInfo;
 }
 
 const calculateNumberOfCargoBays = (cargoBoxes) => {

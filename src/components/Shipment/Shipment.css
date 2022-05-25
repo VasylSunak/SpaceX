@@ -51,6 +51,10 @@
     color: #ffffff;
 }
 
+.shipment__error {
+    color: rgb(212, 20, 20);
+}
+
 @media (max-width: 620px) {
     .shipment {
         padding: 20px;
@@ -76,7 +80,7 @@
         font-size: 18px;
     }
 
-    .shipment__bays-number, .shipment__bays-text {
+    .shipment__bays-number, .shipment__bays-text, .shipment__error {
         text-align: center;
         margin-top: 5px;
     }

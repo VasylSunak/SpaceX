@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import './Shipment.css'
 import { useLocation } from 'react-router-dom'
 import { ShipmentsProvider } from '../../providers/ShipmentsProvider';
-import { getNumberOfCargoBays } from '../../helpers/shipment.helper';
+import { getCargoBaysInfo } from '../../helpers/shipment.helper';
 
 export default function Shipment() {
 
@@ -12,12 +12,12 @@ export default function Shipment() {
   const { shipments } = useContext(ShipmentsProvider);
   const shipment = shipments.find(shipment => shipment.id === pathname);
 
-  const [cargoBays, setCargoBays] = useState(0);
+  const [cargoBays, setCargoBays] = useState({});
   const [inputValue, setInputValue] = useState('');
 
   const handleInputChange = (e) => {
     const value = e.target.value || '';
-    const cargoBays = getNumberOfCargoBays(value);
+    const cargoBays = getCargoBaysInfo(value);
 
     setInputValue(value);
     setCargoBays(cargoBays);
@@ -30,7 +30,7 @@ export default function Shipment() {
   } = shipment || {};
 
   useEffect(() => {
-    const cargoBays = getNumberOfCargoBays(boxes);
+    const cargoBays = getCargoBaysInfo(boxes);
   
     setInputValue(boxes || '');
     setCargoBays(cargoBays);
@@ -47,7 +47,11 @@ export default function Shipment() {
         </div>
 
         <span className="shipment__bays-text">Number of required cargo bays</span>
-        <span className="shipment__bays-number">{cargoBays}</span>
+
+        {cargoBays.error ?
+          <span className="shipment__error">{cargoBays.error}</span> :
+          <span className="shipment__bays-number">{cargoBays.value}</span>}
+        
     </div>
   )
 }
