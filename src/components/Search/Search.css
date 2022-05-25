@@ -1,0 +1,20 @@
+.search {
+    margin: 25px 0;
+    padding: 15px 0 15px 35px;
+    border: 0;
+    border-radius: 10px;
+    background: url(/src/icons/search-icon.svg) no-repeat scroll 12px 14px;
+    background-size: 15px;
+    background-color: #ffffff;
+    padding-left: 40px;
+}
+  
+.search::placeholder {
+    color: #000;
+}
+
+@media (max-width: 620px) {
+    .search {
+        max-width: unset;
+    }
+}

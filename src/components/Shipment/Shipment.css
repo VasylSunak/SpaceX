@@ -1,0 +1,83 @@
+.shipment {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    height: 100%;
+    padding: 15px 40px;
+    border-radius: 30px;
+    background: linear-gradient(124.01deg, #2D3038 0%, rgba(45, 48, 56, 0) 100%);
+}
+
+.shipment__name {
+    font-size: 64px;
+    color: #ffffff;
+}
+
+.shipment__email {
+    font-size: 16px;
+    color: #979797;
+}
+
+.shipment__name, .shipment__email {
+    word-break: break-word;
+}
+
+.shipment__cargo-boxes {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 25px 0;
+}
+  
+.shipment__label {
+    font-size: 16px;
+    color: #979797;
+    margin-bottom: 10px;
+}
+  
+.shipment__input {
+    padding: 15px;
+    border: 0;
+    border-radius: 10px;
+}
+  
+.shipment__bays-text {
+    font-size: 34px;
+    color: #979797;
+}
+  
+.shipment__bays-number {
+    font-size: 56px;
+    color: #ffffff;
+}
+
+@media (max-width: 620px) {
+    .shipment {
+        padding: 20px;
+    }
+    .shipment__name {
+        font-size: 28px;
+    }
+
+    .shipment__email {
+        margin-top: 2px;
+    }
+
+    .shipment__input {
+        padding: 10px;
+        max-width: 100%;
+    }
+
+    .shipment__bays-number {
+        font-size: 34px;
+    }
+
+    .shipment__bays-text {
+        font-size: 18px;
+    }
+
+    .shipment__bays-number, .shipment__bays-text {
+        text-align: center;
+        margin-top: 5px;
+    }
+}
